@@ -1,0 +1,38 @@
+@use "../core/variables";
+
+
+.is-anchor-icon::after {
+  position: relative;
+  top: .1em;
+  display: inline-block;
+  width: 15.5px;
+  height: 15.5px;
+  margin-left: .3em;
+  content: '';
+  background-size: 15.5px 15.5px;
+}
+
+
+.is-anchor-icon[target='_blank']::after {
+  background-image: url('../img/common/icon_target.png');
+}
+
+.is-anchor-icon[href$='.pdf']::after {
+  background-image: url('../img/common/icon_pdf.png');
+}
+
+.is-anchor-icon[href$='.doc']::after,
+.is-anchor-icon[href$='.docx']::after {
+  background-image: url('../img/common/icon_doc.png');
+}
+
+.is-anchor-icon[href$='.ppt']::after,
+.is-anchor-icon[href$='.pptx']::after {
+  background-image: url('../img/common/icon_ppt.png');
+}
+
+.is-anchor-icon[href$='.xls']::after,
+.is-anchor-icon[href$='.xlsx']::after {
+  background-image: url('../img/common/icon_xls.png');
+}
+

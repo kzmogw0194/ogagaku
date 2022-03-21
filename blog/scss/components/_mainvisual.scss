@@ -1,0 +1,62 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #mainvisual
+   ========================================================================== */
+
+
+/*doc
+---
+title: mainvisual
+---
+
+```
+<div class="c-main-visual">
+  <div class="c-main-visual_inner" style="background-image: url(/assets/img/top/mian_visual.png)">
+    <h1 class="c-main-visual_title">メインビジュアル</h1>
+  </div>
+</div>
+```
+*/
+
+.c-main-visual {
+  margin-top: 36px;
+  margin-bottom: 40px;
+}
+
+.c-main-visual_inner {
+  position: relative;
+  max-width: variables.$main-width;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.c-main-visual_title {
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  color: #FFFFFF;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.c-main-visual_img img {
+  height: auto;
+  width: 100%;
+  contain-intrinsic-size: attr(height px);
+  aspect-ratio: attr(width) / attr(height);
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-main-visual {
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  .c-main-visual_title {
+    font-size: 2rem;
+  }
+}

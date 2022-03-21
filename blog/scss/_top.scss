@@ -1,0 +1,56 @@
+@use "core/variables";
+
+/* ==========================================================================
+    #top
+   ========================================================================== */
+
+/* トップ用しか使わないものは共通化せず記述しても良い */
+
+.top-heading {
+  text-align: center;
+}
+
+.top-heading_title {
+  color: variables.$primary-dark-color;
+  margin-bottom: 13px;
+  font-size: 20px;
+}
+
+.top-heading_lead {
+  margin-bottom: 58px;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .top-heading {
+  }
+  .top-heading_title {
+    font-size: 28px;
+  }
+  .top-heading_lead {
+    margin-bottom: 70px;
+  }
+}
+
+.is-top-heading-white {
+  .top-heading_title {
+    color: #FFFFFF;
+  }
+
+  .top-heading_lead {
+    color: #FFFFFF;
+  }
+}
+
+.top-unit-primary-width {
+  margin-bottom: 60px;
+  max-width: variables.$primary-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .top-unit-primary-width {
+    margin-bottom: 80px;
+  }
+}
+

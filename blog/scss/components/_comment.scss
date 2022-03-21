@@ -1,0 +1,111 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #comment
+   ========================================================================== */
+
+/*doc
+---
+title: comment
+---
+*/
+
+//サイドバー
+.bl_comment{
+  display: flex;
+  flex-direction: column;
+  &_item{
+    padding: 1.5%;
+    margin-bottom: variables.$base-short-gap;
+    &:hover .bl_comment_title a{
+      text-decoration: underline;
+    }
+  }
+  &_info{
+    display: flex;
+    align-items: center;
+  }
+  &_meta{
+    display: flex;
+    flex-direction: column;
+    margin-left: variables.$base-spacing-short;
+  }
+  &_author{
+    font-size: variables.$base-font-size;
+    font-weight: bold;
+  }
+  &_date{
+    font-size: variables.$mini-font-size-sp;
+  }
+  &_content{
+    position: relative;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 6px;
+    margin-top: 4px;
+    font-size: variables.$base-font-size;
+    border-radius: variables.$base-radius;
+    z-index: -1;
+    &::before , &::after{
+      bottom: 100%;
+      left: 18px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+    &::before{
+      border-color: rgba(221,221,221,0);
+      border-bottom-color: #ddd;
+      border-width: 9px;
+      margin-left: -9px;
+    }
+    &::after{
+      border-color: rgba(255,255,255,0);
+      border-bottom-color: #fff;
+      border-width: 6px;
+      margin-left: -6px;
+    }
+  }
+  &_title{
+    font-size: variables.$base-font-size;
+  }
+}
+
+//記事
+.bl_commentsArea{
+  margin-top: variables.$base-spacing-landscape;
+  & .bl_comments_reply{
+    padding-top: 5px;
+  }
+  & .children{
+    margin-top: variables.$base-spacing-short;
+    margin-left: variables.$base-spacing;
+  }
+}
+
+@media only screen and (min-width: variables.$desktop) {
+  .bl_commentsArea{
+    padding: 0 30px;
+  }
+}
+
+.comment-form-comment , .bl_commentForm_author , .bl_commentForm_email{
+  display: flex;
+  flex-direction: column;
+  margin-top: variables.$base-spacing-short;
+}
+.comment-respond{
+  & .form-submit{
+    & input{
+      width: 100%;
+      padding: variables.$base-spacing-short 0;
+      cursor: pointer;
+    }
+  }
+  & .bl_commentForm_author input , & .bl_commentForm_email input{
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+.timeline-Viewport{
+  overflow-x: hidden;
+    overflow-y: scroll;
+    height: 400px;
+}

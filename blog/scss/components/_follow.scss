@@ -1,0 +1,51 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #share
+   ========================================================================== */
+
+/*doc
+---
+title: share
+---
+*/
+
+
+.wp-block-image figcaption{
+  margin-bottom: 0;
+  text-align: center;
+}
+.bl_follow{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:space-between;
+  &_wrap{
+    padding: 0 20px;
+  }
+  &_sns{
+    flex:0 0 33%;
+    text-align:center!important;
+  }
+  &_btn{
+    display:inline-block;	
+    font-size:35px;
+    text-decoration:none;
+    transition:.5s;
+    color:#444;
+    &:hover{
+      opacity: 1;
+    }
+    & .fa-instagram{
+      font-size:38px;
+    }
+    & .fa-twitter:hover{
+      color:#55acee;
+    }
+    & .fa-instagram:hover{
+      color:#c6529a;
+    }
+    & .fa-envelope:hover{
+      color:#f3981d;		
+    }
+  }
+}

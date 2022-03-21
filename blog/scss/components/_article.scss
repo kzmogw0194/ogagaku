@@ -1,0 +1,81 @@
+@use "../core/variables";
+
+.bl_article{
+  padding: 0 1.5% 100px;
+  &_time{
+    display: flex;
+    justify-content: flex-end;
+    font-size: variables.$mini-font-size-sp;
+    & span:last-child{
+      margin-left: 2rem;
+    }
+  }
+  &_content{
+    line-height: 1.75;
+    padding-bottom: 50px;
+    & p{
+      margin-bottom: variables.$base-spacing;
+    }
+    & .wp-block-image , ol{
+      margin-bottom: variables.$base-spacing;
+    }
+    & h2{
+      margin-top: 4em;
+      margin-bottom: 2.4em;
+      font-size: 24px;
+      padding: 12px 20px;
+      background-color: variables.$secondary-color;
+    }
+    & h3{
+      margin-top: 2em;
+      margin-bottom: 1.2em;
+      font-size: 20px;
+      padding: 8px 25px;
+      border-left: solid 5px variables.$primary-light-color;
+    }
+    & a{
+      color: variables.$link-text-single;
+    }
+  }
+  & .phrase.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column{
+    flex-basis: initial!important;
+  }
+}
+
+@media only screen and (min-width: variables.$desktop) {
+  .bl_article{
+    padding: 0 30px 100px;
+  }
+}
+
+.bl_cat{
+  margin-bottom: variables.$base-spacing-short;
+  display: flex;
+  flex-direction: column;
+  &_category{
+    font-size: variables.$mini-font-size-sp;
+    margin-bottom: variables.$base-spacing-short;
+    & li{
+      display: inline-block;
+      background-color: variables.$accent-color;
+      & a{
+        padding: 0.4em 0.5em;
+      }
+    }
+  }
+  &_tags{
+    font-size: variables.$mini-font-size-sp;
+    margin-bottom: variables.$base-spacing-short;
+    & ul{
+      display: flex;
+      & li{
+        background-color: variables.$secondary-color;
+        margin-right: 5px;
+        & a{
+          padding: 0.4em 0.5em;
+          border-radius: variables.$base-radius;
+        }
+      }
+    }
+  }
+}

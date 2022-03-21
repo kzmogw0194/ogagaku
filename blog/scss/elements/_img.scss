@@ -1,0 +1,15 @@
+@use "../core/variables";
+
+
+/* ==========================================================================
+    # img
+   ========================================================================== */
+
+
+.el_img {
+  margin-right: auto;
+  margin-bottom: variables.$base-spacing;
+  margin-left: auto;
+  text-align: center;
+}
+

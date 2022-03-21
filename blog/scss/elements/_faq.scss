@@ -1,0 +1,108 @@
+@use "../core/variables";
+
+
+/* ==========================================================================
+   #faq
+   ========================================================================== */
+/*doc
+---
+title: faq
+---
+
+```html_example
+<div class="e-faq">
+  <h3 class="e-faq_title">タイトル</h3>
+  <div class="e-faq_body">
+    <p>テキストテキストテキストテキストテキストテキストテキスト<br>
+      テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+  </div>
+</div>
+```
+*/
+
+
+.e-faq {
+  margin-bottom: variables.$base-spacing;
+  border-bottom: 1px solid variables.$dividers;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-faq {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-faq_title,
+.e-faq_body {
+  padding-left: 2.1rem;
+  position: relative;
+}
+
+.e-faq_title::before,
+.e-faq_body::before {
+  font-family: "Helvetica Neue", Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-faq_title,
+  .e-faq_body {
+    padding-left: 2.6rem;
+  }
+  .e-faq_title::before,
+  .e-faq_body::before {
+    font-size: 2.5rem;
+  }
+}
+
+.e-faq_title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding-top: .5rem;
+  font-weight: bold;
+}
+
+.e-faq_title::before {
+  content: 'Q';
+  color: #477CCB;
+}
+
+.e-faq_body {
+  margin-bottom: 16px;
+}
+
+.e-faq_body::before {
+  content: 'A';
+  color: #FD95A1;
+}
+
+.e-faq_title:before,
+.e-faq_body:before {
+  //font-size: 1rem;
+  //line-height: 2rem;
+  //position: absolute;
+  //display: inline-block;
+  //box-sizing: border-box;
+  //width: 2rem;
+  //height: 2rem;
+  //text-align: center;
+  //color: #fff;
+  //border-radius: 50%;
+}
+
+
+.e-faq_title:before {
+  //content: 'Q';
+  //background-color: #477ccb;
+}
+
+.e-faq_body:before {
+  //content: 'A';
+  //background-color: #fd95a1;
+}

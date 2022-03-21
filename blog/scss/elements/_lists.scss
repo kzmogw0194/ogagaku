@@ -1,0 +1,155 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #list
+   ========================================================================== */
+
+/*  disc
+   ========================================================================== */
+
+/*doc
+---
+title: list
+---
+
+```html_example
+<ul class="e-list-disc">
+  <li>順序なしリスト順序なしリスト順序なしリスト順序なしリスト</li>
+  <li>順序なしリスト順序なしリスト順序なしリスト順序なしリスト</li>
+  <li>順序なしリスト順序なしリスト順序なしリスト順序なしリスト</li>
+  <li>順序なしリスト順序なしリスト順序なしリスト順序なしリスト</li>
+</ul>
+```
+*/
+
+
+.e-list-disc {
+  list-style: none;
+  margin-bottom: variables.$base-spacing;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-list-disc {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-list-disc li {
+  position: relative;
+  padding-left: 1.4em;
+  margin-bottom: .6em;
+}
+
+.e-list-disc li::before {
+  position: absolute;
+  top: .6em;
+  left: .3em;
+  display: block;
+  width: .5em;
+  height: .5em;
+  content: '';
+  border-radius: 100%;
+  background-color: variables.$primary-color;
+}
+
+.e-list-disc li ul,
+.e-list-disc li ol {
+  margin-bottom: 0;
+}
+
+
+/*  decimal
+   ========================================================================== */
+
+/*doc
+---
+title: list-ordered
+---
+
+```html_example
+<ol class="e-list-decimal">
+  <li>番号付きリスト番号付きリスト番号付きリスト番号付きリスト</li>
+  <li>番号付きリスト番号付きリスト番号付きリスト番号付きリスト</li>
+  <li>番号付きリスト番号付きリスト番号付きリスト番号付きリスト</li>
+  <li>番号付きリスト番号付きリスト番号付きリスト番号付きリスト</li>
+</ol>
+
+```
+*/
+
+.e-list-decimal {
+  margin-bottom: variables.$base-spacing;
+  margin-left: 1.4em;
+  list-style-type: decimal;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-list-decimal {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-list-decimal li {
+  margin-bottom: .6em;
+}
+
+.e-list-decimal li ul,
+.e-list-decimal li ol {
+  margin-bottom: 0;
+}
+
+
+/*  arrow
+   ========================================================================== */
+
+/*doc
+---
+title: list-arrow
+---
+
+```html_example
+<ul class="e-list-arrow">
+  <li>矢印付きリスト矢印付きリスト矢印付きリスト矢印付きリスト</li>
+  <li>矢印付きリスト矢印付きリスト矢印付きリスト矢印付きリスト</li>
+  <li>矢印付きリスト矢印付きリスト矢印付きリスト矢印付きリスト</li>
+  <li>矢印付きリスト矢印付きリスト矢印付きリスト矢印付きリスト</li>
+</ul>
+```
+*/
+
+
+.e-list-arrow {
+  margin-bottom: variables.$base-spacing;
+  margin-left: 0;
+  list-style-type: none;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-list-arrow {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-list-arrow li {
+  position: relative;
+  padding-left: 1.4em;
+}
+
+.e-list-arrow li::before {
+  position: absolute;
+  top: .7em;
+  left: .3em;
+  display: inline-block;
+  width: .3em;
+  height: .3em;
+  content: '';
+  transform: rotate(45deg);
+  vertical-align: middle;
+  border-style: solid;
+  border-color: variables.$primary-text;
+  border-top-width: .1em;
+  border-right-width: .1em;
+  border-bottom-width: 0;
+  border-left-width: 0;
+}
+

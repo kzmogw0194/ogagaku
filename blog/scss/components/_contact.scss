@@ -1,0 +1,235 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #contact
+   ========================================================================== */
+
+/*doc
+---
+title: contact
+---
+*/
+
+.form__wrap {
+    width: 100%;
+    max-width: 900px;/*フォームの最大幅*/
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .wpcf7 .template04 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #252525;
+    font-size: 14px;
+  }
+  .wpcf7 .template04 a {
+    margin: 0;
+    padding: 0;
+    text-decoration: underline;
+    color: inherit;
+    transition: opacity .25s;
+  }
+  .wpcf7 .template04 a:hover {
+    opacity: .5;
+    transition: opacity .25s;
+  }
+  .wpcf7 .template04 div.form__row {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    margin-top: 2em;
+  }
+  .wpcf7 .template04 div.form__row.row-name,
+  .wpcf7 .template04 div.form__row.row-email{
+    width: calc(50% - 10px);
+    z-index: -1;
+  }
+  .wpcf7 .template04 div.form__row.row-title , .wpcf7 .template04 div.form__row.row-message {
+    width: 100%;
+    z-index: -1;
+  }
+  .wpcf7 .template04 div.form__row.row-submit {
+    width: 100%;
+    margin-top: 3em;
+    text-align: center;
+    z-index: -1;
+  }
+  .wpcf7 .template04 p.form__label {
+    flex-shrink: 0;
+    min-width: 146px;
+    margin: 0 0 .3em 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .wpcf7 .template04 p.form__body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .wpcf7 .template04 p.form__label label {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-size: .95em;
+    box-sizing: border-box;
+  }
+  .wpcf7 .template04 p.form__label.is-required label {
+    margin-right: 1em;
+  }
+  .wpcf7 .template04 p.form__label.is-required label::after {
+    content: "*";
+    display: block;
+    position: absolute;
+    top: -.3em;
+    right: -.5em;
+    color: #b74c4c;
+    box-sizing: border-box;
+  }
+  /* テキストフィールド */
+  .wpcf7 .template04 input[type=text],
+  .wpcf7 .template04 input[type=email],
+  .wpcf7 .template04 input[type=date],
+  .wpcf7 .template04 input[type=number] {
+    width: 100%;
+    margin: 0;
+    padding: .2em 0;
+    border: 0;
+    border-bottom: 1px solid #ababab;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    overflow: initial;
+  }
+  .wpcf7 .template04 textarea {
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    padding: .2em 0;
+    border: 0;
+    border-bottom: 1px solid #ababab;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    color: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  /* テキストフィールド placeholder */
+  .wpcf7 .template04 input[type=text]::placeholder,
+  .wpcf7 .template04 input[type=tel]::placeholder,
+  .wpcf7 .template04 input[type=email]::placeholder,
+  .wpcf7 .template04 input[type=url]::placeholder,
+  .wpcf7 .template04 input[type=date]::placeholder,
+  .wpcf7 .template04 input[type=number]::placeholder,
+  .wpcf7 .template04 textarea::placeholder {
+    opacity: 0;
+    display: none;
+  }
+  .wpcf7 .template04 input[type=text]:-ms-input-placeholder,
+  .wpcf7 .template04 input[type=tel]:-ms-input-placeholder,
+  .wpcf7 .template04 input[type=email]:-ms-input-placeholder,
+  .wpcf7 .template04 input[type=url]:-ms-input-placeholder,
+  .wpcf7 .template04 input[type=date]:-ms-input-placeholder,
+  .wpcf7 .template04 input[type=number]:-ms-input-placeholder,
+  .wpcf7 .template04 textarea:-ms-input-placeholder {
+    opacity: 0;
+    display: none;
+  }
+  /* テキストフィールド フォーカス時 */
+  .wpcf7 .template04 input[type=text]:focus,
+  .wpcf7 .template04 input[type=tel]:focus,
+  .wpcf7 .template04 input[type=email]:focus,
+  .wpcf7 .template04 input[type=url]:focus,
+  .wpcf7 .template04 input[type=date]:focus,
+  .wpcf7 .template04 input[type=number]:focus,
+  .wpcf7 .template04 textarea:focus {
+    outline: 1px solid transparent;
+  }
+  /* 送信ボタン */
+  .wpcf7 .template04 .submit-btn {
+    position: relative;
+    width: 320px;
+    height: 65px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .wpcf7 .template04 input[type="submit"] {
+    cursor: pointer;
+    width: 320px;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px #000 solid;
+    background-color: #252525;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: opacity .25s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .wpcf7 .template04 input[type="submit"]:disabled {
+    cursor: not-allowed;
+    box-shadow: none!important;
+    border: 1px solid #f8f8f8!important;
+    background-color: #f8f8f8!important;
+    color: #999!important;
+  }
+  .wpcf7 .template04 input[type="submit"]:hover {
+    background-color: #fff;
+    color: #10554b;
+    transition: opacity .25s, background-color .25s;
+  }
+  .wpcf7 .template04 input[type="submit"]:focus {
+    outline: 1px #eee solid;
+    border: 1px #080808 solid;
+  }
+  .wpcf7 .template04 span.wpcf7-list-item {
+    margin: 0 1em .2em 0;
+  }
+  .wpcf7 .template04 div.wpcf7 .ajax-loader {
+    display: block;
+  }
+  .wpcf7 form .wpcf7-response-output{
+      border-color: #fff!important;
+      color: #dc3232!important;
+      text-align: center;
+  }
+  .recaptcha{
+      margin-top: 3em;
+      text-align: center;
+  }
+  .grecaptcha-badge {
+       visibility: hidden; 
+    }
+    .recaptcha{
+      margin: 4rem 0 0 0;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      & a{
+          margin: 1.5em 0 0;
+          text-decoration: underline;
+      }
+  }

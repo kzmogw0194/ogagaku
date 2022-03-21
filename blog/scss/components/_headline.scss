@@ -1,0 +1,153 @@
+@use "../core/variables";
+
+
+/* ==========================================================================
+   #headline
+   ========================================================================== */
+
+/*doc
+---
+title: headline
+---
+
+```html_example
+
+<ul class="c-headline">
+  <li class="c-headline_item">
+    <time class="c-headline_date" datetime="2021-01-01">2021年01月01日</time>
+    <p class="c-headline_title"><a href="">ニュースタイトルが入りますニュースタイトルが入ります。ニュースタイトルが入りますニュースタイトルが入ります。</a><span class="is-headline-new">New</span></p>
+  </li>
+  <li class="c-headline_item">
+    <time class="c-headline_date" datetime="2021-01-01">2021年01月01日</time>
+    <p class="c-headline_title"><a href="">ニュースタイトルが入りますニュースタイトルが入ります。ニュースタイトルが入りますニュースタイトルが入ります。</a></p>
+  </li>
+  <li class="c-headline_item">
+    <time class="c-headline_date" datetime="2021-01-01">2021年01月01日</time>
+    <p class="c-headline_title"><a href="">ニュースタイトルが入りますニュースタイトルが入ります。ニュースタイトルが入りますニュースタイトルが入ります。</a></p>
+  </li>
+</ul>
+
+```
+*/
+.c-headline {
+  margin-bottom: variables.$base-spacing;
+  border-top: 1px solid variables.$dividers;
+}
+
+.c-headline_item {
+  line-height: 1.6;
+  display: block;
+  padding: 15px 14px 16px 14px;
+  border-bottom: 1px solid variables.$dividers;
+}
+
+.c-headline_item a {
+  text-decoration: none;
+  color: variables.$primary-text;
+}
+
+.c-headline_item a:hover {
+  text-decoration: underline;
+}
+
+.c-headline_date {
+  font-size: 12px;
+  font-weight: normal;
+  margin: .1em 2em .1em 0;
+  white-space: nowrap;
+  color: variables.$secondary-text;
+}
+
+.c-headline_title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: .4em;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-headline {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+  .c-headline_item {
+    display: flex;
+    padding: 21px 16px 21px 16px;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .c-headline_title {
+    margin-top: 0;
+  }
+}
+
+.is-headline-new {
+  background-color: #FC3960;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 10px;
+  padding: 1px 5px;
+  display: inline-block;
+
+}
+
+/* リンク全体  */
+.c-headline2 {
+  margin-bottom: variables.$base-spacing;
+  border-top: 1px solid variables.$dividers;
+}
+
+/* パディングの指定をaタグに移動させる */
+.c-headline2_item {
+  line-height: 1.6;
+  display: block;
+  /*   padding: 15px 14px 16px 14px; */
+  border-bottom: 1px solid variables.$dividers;
+}
+
+
+.c-headline2_item a {
+  text-decoration: none;
+  color: variables.$primary-text;
+  padding: 15px 14px 16px 14px; /* 追加 */
+  display: block; /* 追加 */
+}
+
+/* マウスオーバー時に見出しのみ下線が表示するようにタグを絞り込む */
+.c-headline2_item a:hover .c-headline2_title {
+  text-decoration: underline;
+}
+
+.c-headline2_date {
+  font-size: 12px;
+  font-weight: normal;
+  margin: .1em 2em .1em 0;
+  white-space: nowrap;
+  color: variables.$secondary-text;
+}
+
+.c-headline2_title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: .4em;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-headline2 {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+  /* リストの指定をaタグに移動させる */
+  .c-headline2_item a {
+    display: flex;
+    padding: 21px 16px 21px 16px;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .c-headline2_title {
+    margin-top: 0;
+  }
+}
+
+
+
+

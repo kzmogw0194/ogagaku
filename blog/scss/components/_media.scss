@@ -1,0 +1,103 @@
+@use "../core/variables";
+
+/* ==========================================================================
+    #media
+   ========================================================================== */
+
+/*doc
+---
+title: media
+---
+
+```html_example
+
+<div class="c-media">
+  <a href="">
+    <figure class="c-media_img"><img src="/assets/img/dummy/media.png" width="110" height="110" alt="ダミー"></figure>
+    <div class="c-media_body">
+      <h2 class="c-media_title">ページタイトル</h2>
+      <p class="c-media_text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>    </div>
+  </a>
+</div>
+
+```
+
+*/
+
+.c-media {
+  display: flex;
+  margin-right: auto;
+  margin-bottom: variables.$base-spacing;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.c-media_link,
+.c-media > a {
+  display: flex;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-media {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+
+}
+
+.c-media_link:hover,
+.c-media > a:hover {
+  transition: all variables.$base-duration variables.$base-timing;
+  text-decoration: none;
+  opacity: .6;
+  color: inherit;
+
+}
+
+.c-media a {
+  color: inherit;
+}
+
+.c-media_img {
+  max-width: 240px;
+  min-width: 110px;
+  margin-right: 16px;
+  text-align: center;
+}
+
+.c-media_img img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.c-media_body {
+}
+
+.c-media_title,
+.c-media_text {
+  margin-bottom: .3rem;
+}
+
+.c-media_title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.c-media_text {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-media_title {
+    font-size: 20px;
+  }
+}
+
+
+.is-media-small .c-media_img {
+  width: 110px;
+  min-width: 110px;
+}

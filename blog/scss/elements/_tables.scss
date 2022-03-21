@@ -1,0 +1,220 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #table
+   ========================================================================== */
+
+
+.e-table {
+  width: 100%;
+  margin-bottom: variables.$base-spacing;
+  border-spacing: 0;
+  border-collapse: separate;
+  border-top: 1px solid variables.$dividers;
+  border-right: 1px solid variables.$dividers;
+}
+
+
+.e-table tr,
+.e-table td,
+.e-table th {
+  text-align: left;
+  vertical-align: top;
+  word-break: break-all;
+}
+
+.e-table th {
+  width: 30%;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid variables.$dividers;
+  border-left: 1px solid variables.$dividers;
+  background-color: variables.$primary-light-color;
+}
+
+.e-table td {
+  padding: 10px;
+  border-bottom: 1px solid variables.$dividers;
+  border-left: 1px solid variables.$dividers;
+  background-color: #FFFFFF;
+}
+
+
+.e-table caption {
+  margin-bottom: 10px;
+  color: variables.$secondary-text;
+}
+
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-table {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+  .e-table th {
+    width: 20%;
+    padding: 11px 16px;
+  }
+
+  .e-table td {
+    padding: 11px 16px;
+  }
+}
+
+
+/*  borderless
+   ========================================================================== */
+
+.is-table-borderless {
+  border-right: 0;
+}
+
+.is-table-borderless th {
+  border-left: 0;
+  background: transparent;
+}
+
+.is-table-borderless td {
+  border-left: 0;
+}
+
+
+/* block
+   ========================================================================== */
+
+/* spのみ */
+@media only screen and (max-width: variables.$landscape) {
+  .is-table-sp-block th {
+    border-bottom: 0;
+  }
+  .is-table-sp-block th,
+  .is-table-sp-block td {
+    display: block;
+    width: auto;
+  }
+}
+
+
+/*  scroll
+   ========================================================================== */
+
+/* spのみ */
+@media only screen and (max-width: variables.$landscape) {
+  .is-responsive-table {
+    overflow-x: scroll;
+    width: 100%;
+    padding-top: 2.5em;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .is-responsive-table::before {
+    font-size: .8em;
+    position: absolute;
+    right: 0;
+    left: 0;
+    display: block;
+    margin-top: -2.5em;
+    padding: .5em 0;
+    content: ' ←　この表は左右にスライドできます　→';
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .is-responsive-table::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .is-responsive-table::-webkit-scrollbar-track {
+    background: #D4D4D4;
+  }
+
+  .is-responsive-table::-webkit-scrollbar-thumb {
+    background: #333333;
+  }
+
+  .is-responsive-table table {
+    width: auto;
+    min-width: 100%;
+  }
+
+  .is-responsive-table th,
+  .is-responsive-table td {
+    white-space: nowrap;
+  }
+
+  /*　スクロールした要素の中で幅を持たせたい場合　*/
+  .is-responsive-item-width-30vw {
+    width: 30vw;
+    white-space: normal;
+  }
+  .is-responsive-item-width-50vw {
+    width: 50vw;
+    white-space: normal;
+  }
+
+}
+
+
+/* tool
+   ========================================================================== */
+
+.is-layout-fixed {
+  table-layout: fixed;
+}
+
+.e-table th.is-cell-center,
+.e-table td.is-cell-center {
+  text-align: center;
+}
+
+.e-table th,
+.e-table td　 {
+  &.is-cell-1em {
+    width: 1em;
+  }
+
+  &.is-cell-10p {
+    width: 10%;
+  }
+
+  &.is-cell-15p {
+    width: 15%;
+  }
+
+  &.is-cell-20p {
+    width: 20%;
+  }
+
+  &.is-cell-25p {
+    width: 25%;
+  }
+
+  &.is-cell-30p {
+    width: 30%;
+  }
+
+  &.is-cell-50p {
+    width: 50%;
+  }
+}
+
+
+/* SP block時の指定を解除 */
+@media only screen and (max-width: variables.$landscape) {
+
+  .e-table.is-table-sp-block th,
+  .e-table.is-table-sp-block td {
+    &.is-cell-1em,
+    &.is-cell-10p,
+    &.is-cell-15p,
+    &.is-cell-20p,
+    &.is-cell-25p,
+    &.is-cell-30p,
+    &.is-cell-50p {
+      width: auto;
+    }
+  }
+
+}
+
+
+

@@ -1,0 +1,9 @@
+@use "../variables";
+
+//単位を外す
+//strip-units(12px);
+
+@function strip-units($x: variables.$base-spacing-landscape ) {
+  @return $x / (1 + $x - $x);
+}
+

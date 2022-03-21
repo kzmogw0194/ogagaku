@@ -1,0 +1,15 @@
+@use "../core/variables";
+
+/* @  Footer Layout
+ * ------------------------------------------------------------ */
+
+.ly_footer{
+  padding: 8px;
+  margin-bottom: variables.$base-spacing-header;
+  &_inner{
+    margin: 0 auto;
+  }
+  & .el_footerCopyright{
+    text-align: center;
+  }
+}

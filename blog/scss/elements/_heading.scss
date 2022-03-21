@@ -1,0 +1,171 @@
+@use "../core/variables";
+
+/* ==========================================================================
+    #heading
+   ========================================================================== */
+
+
+.e-heading-group {
+  margin-bottom: variables.$base-spacing;
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .2em;
+  }
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-heading-group {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-heading-date {
+  color: variables.$secondary-text;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+/*doc
+---
+title: heading
+---
+
+```html_example
+    <h1 class="e-heading1">見出し1</h1>
+    <h2 class="e-heading2">見出し2</h2>
+    <h3 class="e-heading3">見出し3</h3>
+    <h4 class="e-heading4">見出し4</h4>
+    <h5 class="e-heading5">見出し5</h5>
+    <h6 class="e-heading6">見出し6</h6>
+```
+*/
+
+.ly_sidebar h2 , .ly_sidebar h3{
+  padding: 12px;
+  margin-top: variables.$base-spacing-short;
+  border-radius: variables.$base-radius;
+  font-size: variables.$base-font-size-heading3;
+  font-weight: bold;
+}
+
+.el_heading1,
+.el_heading2,
+.el-heading3,
+.el-heading4,
+.el-heading5,
+.el-heading6,
+.bl_article h2{
+  font-weight: bold;
+  line-height: variables.$base-line-height;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.el_heading1 {
+  font-size: 28px;
+}
+
+.el_heading2 {
+  font-size: 24px;
+}
+
+.e-heading3 {
+  font-size: 20px;
+}
+
+.e-heading4 {
+  font-size: 18px;
+}
+
+.e-heading5 {
+  font-size: 16px;
+}
+
+.e-heading6 {
+  font-size: 16px;
+}
+
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-heading1 {
+    font-size: 36px;
+  }
+  .e-heading2 {
+    font-size: 28px;
+  }
+  .e-heading3 {
+    font-size: 26px;
+  }
+  .e-heading4 {
+    font-size: 20px;
+  }
+  .e-heading5 {
+    font-size: 18px;
+  }
+  .e-heading6 {
+    font-size: 16px;
+  }
+}
+
+/*doc
+---
+title: heading
+---
+
+```html_example
+  <h2 class="e-heading2 is-heading-bg is-heading-color-white">見出し1</h2>
+  <h3 class="e-heading3 is-heading-stripe">見出し2</h3>
+  <h4 class="e-heading4 is-heading-bdt">見出し3</h4>
+  <h5 class="e-heading5 is-heading-bdl is-heading-color">見出し4</h5>
+  <h6 class="e-heading6 is-heading-bdb">見出し5</h6>
+```
+*/
+
+
+.is-heading-bdt {
+  padding-top: .2em;
+  border-top: 2px solid variables.$primary-color;
+}
+
+.is-heading-bdl {
+  padding-left: .3em;
+  border-left: 5px solid variables.$primary-color;
+}
+
+.is-heading-bdb {
+  padding-bottom: .2em;
+  border-bottom: 2px solid variables.$primary-color;
+}
+
+.is-heading-bg {
+  margin-bottom: .6em;
+  padding: .2em .6em;
+  background-color: variables.$primary-light-color;
+}
+
+.is-heading-color {
+  color: variables.$primary-color;
+}
+
+.is-heading-color-white {
+  color: #FFFFFF;
+}
+
+.is-heading-stripe {
+  margin-bottom: .6em;
+  padding: .2em .6em;
+  background: repeating-linear-gradient(-45deg, variables.$primary-light-color, variables.$primary-light-color 3px, #fff 0, #fff 5px);
+}
+
+.is-heading-left {
+  text-align: left;
+}
+
+.is-heading-center {
+  text-align: center;
+}
+
+.is-heading-right {
+  text-align: right;
+}
+

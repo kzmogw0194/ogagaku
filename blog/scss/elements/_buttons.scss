@@ -1,0 +1,146 @@
+@use "../core/variables";
+
+/* ==========================================================================
+    #button
+   ========================================================================== */
+
+
+.e-button {
+  margin-bottom: variables.$base-spacing;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .e-button {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.e-button a,
+.e-button button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 122px;
+  padding: .70em 1.2em;
+  cursor: pointer;
+  user-select: none;
+  transition: all variables.$base-duration variables.$base-timing;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  text-decoration: inherit;
+  color: variables.$primary-text;
+  border: 1px solid variables.$dividers;
+  border-radius: variables.$base-radius;
+  background-color: #FFFFFF;
+  appearance: none;
+}
+
+.e-button a:hover,
+.e-button button:hover,
+.e-button a:focus,
+.e-button button:focus {
+  opacity: .6;
+}
+
+.e-button a:disabled,
+.e-button button:disabled {
+  cursor: not-allowed;
+  color: #666666;
+  border: 1px solid variables.$dividers;
+  background-color: #EEEEEE;
+}
+
+
+/* type
+   ========================================================================== */
+
+.is-button-primary a,
+.is-button-primary button {
+  color: #fff;
+  border-color: variables.$primary-color;
+  background-color: variables.$primary-color;
+}
+
+.is-button-accent a,
+.is-button-accent button {
+  color: #FFFFFF;
+  border-color: variables.$accent-color;
+  background-color: variables.$accent-color;
+}
+
+
+.is-button-disabled a,
+.is-button-disabled button {
+  cursor: not-allowed;
+  color: #666666;
+  border: 1px solid variables.$dividers;
+  background-color: #EEEEEE;
+}
+
+
+/* position
+   ========================================================================== */
+
+.is-button-left a,
+.is-button-left button {
+  text-align: left;
+}
+
+.is-button-right {
+  text-align: right;
+}
+
+.is-button-center {
+  text-align: center;
+}
+
+
+/* size
+   ========================================================================== */
+
+.is-button-sm {
+  min-width: 80px;
+}
+
+.is-button-sm a,
+.is-button-sm button {
+  font-size: .75em;
+  min-width: 80px;
+  padding: (.85em * .5) (1.2em * .55);
+}
+
+
+.is-button-lg a,
+.is-button-lg button {
+  font-size: 1.15em;
+  font-weight: bold;
+  width: 100%;
+  padding: (.85em * 1.1) (1.2em);
+}
+
+.is-button-xl a,
+.is-button-xl button {
+  font-size: 1.15em;
+  font-weight: bold;
+  width: 100%;
+  padding: (.85em * 1.1) (1.2em);
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .is-button-lg a,
+  .is-button-lg button {
+    width: auto;
+    min-width: 266px;
+  }
+
+  .is-button-xl a,
+  .is-button-xl button {
+    width: auto;
+    min-width: 376px;
+  }
+}
+
+[class*='is-col'] .e-button a,
+[class*='is-col'] .e-button button {
+  min-width: 0;
+}

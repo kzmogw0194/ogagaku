@@ -1,0 +1,259 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #card
+   ========================================================================== */
+
+/*doc
+---
+title: card
+---
+
+```html_example
+
+<div class="c-card">
+  <a href="" class="c-card_link">
+    <figure class="c-card_img"><img src="/assets/img/dummy/card.png" width="344" height="229" alt=""></figure>
+    <div class="c-card_body">
+      <h3 class="c-card_title">ページタイトル</h3>
+      <p class="c-card_text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+    </div>
+  </a>
+</div>
+
+```
+
+*/
+
+@keyframes animate-banner {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.bl_cardList{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  &_head{
+    text-align: center;
+    font-size: 18px;
+    margin-top: variables.$base-spacing;
+    margin-bottom: variables.$base-spacing-short;
+  }
+  &_title{
+    position: relative;
+    display: inline-block;
+    padding: 0 75px;
+    z-index: -1;
+    &::before , &::after{
+      content: '';
+      position: absolute;
+      top: 50%;
+      display: inline-block;
+      width: 55px;
+      height: 1px;
+      background-color: black;
+    }
+    &::before{
+      left: 0;
+      margin-right: 10px;
+    }
+    &::after{
+      right: 0;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .bl_cardList{
+    flex-direction: initial;
+  }
+}
+
+.bl_card{
+  display: grid;
+  grid-auto-columns: 100%;
+  box-shadow: 0 3px 10px 0 rgba(#000, 0.3);
+  border-radius: variables.$base-radius;
+  &_wrap{
+    margin-bottom: variables.$base-gap;
+    padding: 1.5%;
+    color: variables.$primary-text;
+    display: block;
+  }
+  &_thumb{
+    width: 100%;
+    grid-area: 1/-1;
+    & img{
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  &_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px 5px 15px;
+  }
+  &_title{
+    margin-bottom: variables.$base-short-gap;
+    font-weight: bold;
+  }
+  &_snipet{
+    font-size: variables.$mini-font-size-sp;
+    color: variables.$secondary-text;
+  }
+  &_meta{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: variables.$base-short-gap;
+    margin-bottom: variables.$base-short-gap;
+    padding: 0 10px;
+  }
+  &_author{
+    display: flex;
+    align-items: center;
+    &Icon{
+      margin-right: variables.$base-short-gap;
+      & img{
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border: 1px solid #000;
+        background-color: #000;
+      }
+    }
+    &Name{
+      font-size: variables.$mini-font-size-sp;
+    }
+  }
+  &_time{
+    font-size: variables.$mini-font-size-sp;
+  }
+  &_info{
+    display: flex;
+    grid-area: 1/-1;
+    align-self: start;
+    justify-self: start;
+    min-width: 100px;
+    height: 28px;
+  }
+  &_category{
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border: solid 1px #000;
+    border-radius: variables.$base-radius;
+    background-color: #fff;
+    font-size: variables.$minimum-font-size-sp;
+  }
+}
+@media only screen and (min-width: variables.$landscape) {
+  .bl_card_wrap{
+    width: 50%;
+  }
+}
+
+.bl_entryCard{
+  display: grid;
+  grid-auto-columns: 100%;
+  box-shadow: 0 3px 10px 0 rgba(#000, 0.3);
+  border-radius: variables.$base-radius;
+  &_wrap{
+    margin-bottom: variables.$base-gap;
+    padding: 1.5%;
+    color: variables.$primary-text;
+    display: block;
+    &:hover{
+      opacity: 1;
+    }
+    &:hover .bl_entryCard_thumb{
+      filter: none;
+    }
+  }
+  &_thumb{
+    width: 100%;
+    grid-area: 1/-1;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    opacity: .5;
+    filter: grayscale(100%);
+    z-index: -1;
+    & img{
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  &_content{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 15px;
+    grid-area: 1/-1;
+    justify-content: flex-start;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    z-index: -1;
+  }
+  &_title{
+    margin-bottom: variables.$base-short-gap;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.2;
+    width: 80%;
+  }
+  &_meta{
+    display: flex;
+    flex-direction: column;
+    padding-left: variables.$base-short-gap;
+  }
+  &_author{
+    display: flex;
+    align-items: center;
+    margin-bottom: variables.$base-short-gap;
+    &Icon{
+      margin-right: variables.$base-short-gap;
+      & img{
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        object-fit: cover;
+        border: 1px solid #000;
+        background-color: #000;
+      }
+    }
+    &Name{
+      font-size: variables.$mini-font-size-sp;
+    }
+  }
+  &_time{
+    font-size: variables.$mini-font-size-sp;
+  }
+  &_banner{
+    display: block;
+    grid-area: 1/-1;
+    margin-top: auto;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+  }
+  &_snipet{
+    font-size: variables.$mini-font-size-sp;
+    color: variables.$primary-text;
+    display: inline-block;
+    line-height: 30px;
+    padding-left: 100%;
+    white-space: nowrap;
+    animation: animate-banner 20s linear infinite;
+  }
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .bl_entryCard_wrap{
+    width: 50%;
+  }
+}

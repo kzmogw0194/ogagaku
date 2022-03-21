@@ -1,0 +1,90 @@
+@use "../core/variables";
+@use "sass:math";
+
+@mixin grid($className:'.is-grid', $col:4, $w:940, $g:32) {
+
+  $g_ratio : (($g / 2) / $w);
+  $col_ratio : (100 / $col);
+
+  $grid_gap :   (math.floor(($g_ratio * 100%) * 100) / 100);
+  $grid_width : (math.floor(($col_ratio - ($grid_gap * 2)) * 100) / 100);
+
+  display: flex;
+  margin-right: - $grid_gap;
+  margin-left: - $grid_gap;
+  align-items: stretch;
+  flex-wrap: wrap;
+
+  #{$className} {
+    margin-right: $grid_gap;
+    margin-left: $grid_gap;
+    flex: 0 0 $grid_width;
+    > *:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+@media only screen and (min-width: variables.$landscape) {
+
+  .is-grid-2to1 {
+    @include grid('.is-grid', 2, 1192, 32);
+  }
+
+  .is-grid-3to1 {
+    @include grid('.is-grid', 3, 1192, 32);
+  }
+  .is-grid-4to1 {
+    @include grid('.is-grid', 4, 1192, 32);
+  }
+}
+
+
+$grid_ratio : ((32px /  2) /  variables.$container-width);
+$grid_gap : (math.floor( $grid_ratio * 100% * 1000) / 1000);
+
+@media only screen and (min-width: variables.$landscape) {
+
+  .is-row {
+    display: flex;
+    clear: both;
+    margin-right: -$grid_gap;
+    margin-left: -$grid_gap;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+
+  [class*='is-col-'] {
+    display: block;
+    box-sizing: border-box;
+    margin-right: $grid_gap;
+    margin-bottom: 20px;
+    margin-left: $grid_gap;
+    align-self: stretch;
+  }
+
+  [class*="is-col-"] > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  .is-col-3 {
+    flex: 0 0 (100 / 12) * 3 - ($grid_gap * 2);
+  }
+  .is-col-4 {
+    flex: 0 0 (100 / 12) * 4 - ($grid_gap * 2);
+  }
+  .is-col-6 {
+    flex: 0 0 (100 / 12) * 6 - ($grid_gap * 2);
+  }
+  .is-col-8 {
+    flex: 0 0 (100 / 12) * 8 - ($grid_gap * 2);
+  }
+  .is-col-12 {
+    flex: 0 0 (100 / 12) * 12 - ($grid_gap * 2);
+  }
+
+}
+
+
+

@@ -1,0 +1,37 @@
+@use "../core/variables";
+
+
+.is-mb-sm {
+  margin-bottom: 16px;
+}
+.is-mb {
+  margin-bottom: variables.$base-spacing;
+}
+.is-mb-lg {
+  margin-bottom: 60px;
+}
+@media only screen and (min-width: variables.$landscape) {
+  .is-mb-sm {
+    margin-bottom: 16px;
+  }
+  .is-mb {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+  .is-mb-lg {
+    margin-bottom: 80px;
+  }
+}
+
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

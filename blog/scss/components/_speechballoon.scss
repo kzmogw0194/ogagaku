@@ -1,0 +1,83 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #speechballoon
+   ========================================================================== */
+
+/*doc
+---
+title: speechballoon
+---
+*/
+
+.bl_speechBalloon{
+  display: flex;
+  margin-top: variables.$base-spacing;
+  &_authorImage{
+    width: 60px;
+    height: 60px;
+    & img{
+      display: block;
+    }
+  }
+  &_wrap{
+    flex: 1;
+  }
+  &_authorText{
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    margin-top: 8px;
+    padding: 20px;
+    position: relative;
+    &::before{
+      border: 8px solid transparent;
+      border-top-color: #dcdcdc;
+      content: "";
+      position: absolute;
+      top: -1px;
+    }
+    &::after{
+      border: 6px solid transparent;
+      border-top-color: variables.$primary-color;
+      content: "";
+      position: absolute;
+      top: 0;
+    }
+  }
+  & p{
+    word-wrap: break-word;
+    word-break: break-word;
+    margin: 0;
+  }
+  &.bl_speechBalloon_type_l{
+    flex-direction: row-reverse;
+    & .bl_speechBalloon_wrap{
+      margin-right: 14px;
+    }
+    & .bl_speechBalloon_authorName{
+      text-align: right;
+    }
+    & .bl_speechBalloon_authorText{
+      &::before{
+        right: -9px;
+      }
+      &::after{
+        right: -6px;
+      }
+    }
+  }
+  &.bl_speechBalloon_type_r{
+    & .bl_speechBalloon_wrap{
+      margin-left: 14px;
+    }
+    & .bl_speechBalloon_authorText{
+      &::before{
+        left: -9px;
+      }
+      &::after{
+        left: -6px;
+      }
+    }
+  }
+}
+

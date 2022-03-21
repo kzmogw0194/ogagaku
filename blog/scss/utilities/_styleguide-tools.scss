@@ -1,0 +1,59 @@
+@use "../core/variables";
+
+
+/* @  スタイルガイド用
+ * ------------------------------------------------------------ */
+.styleguide-heading {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.71;
+  margin-bottom: variables.$base-spacing;
+  padding: 5px;
+  color: variables.$primary-color;
+  border-bottom: solid 1px variables.$primary-color;
+}
+
+.styleguide-sub-heading {
+  font-size: 16px;
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 1em;
+  color: variables.$primary-color;
+}
+
+.styleguide-sub-heading::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: .5em;
+  height: 1px;
+  margin: auto;
+  content: '';
+  background-color: variables.$primary-color;
+}
+
+.styleguide-dl {
+  overflow: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 16px 10px;
+  white-space: nowrap;
+  border: solid 1px #ccc;
+}
+
+.styleguide-dl dt,
+.styleguide-dl dd {
+  display: inline;
+}
+.styleguide-dl dd + dt::before {
+  display: block;
+  content: '\A';
+  white-space: pre;
+}
+.styleguide-dl dd + dd::before {
+  font-weight: normal;
+  content: ', ';
+}
+

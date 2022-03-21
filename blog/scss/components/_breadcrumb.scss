@@ -1,0 +1,40 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #breadcrumb
+   ========================================================================== */
+
+
+/*doc
+---
+title: breadcrumb
+---
+*/
+
+.bl_breadcrumb{
+  display: flex;
+  flex-wrap: wrap;
+  &_wrap{
+    margin-top: variables.$base-spacing-short;
+    padding: 0.6em 1em;
+    font-size: variables.$minimum-font-size-sp;
+  }
+  &_item{
+    margin-right: variables.$base-spacing-short;
+    &::after{
+      content: ">";
+    }
+    &:last-child::after{
+      content: "";
+    }
+  }
+}
+
+@media only screen and (min-width: variables.$desktop) {
+  .bl_breadcrumb{
+    &_wrap{
+      padding: 0.6em 30px;
+    }
+  }
+}
+

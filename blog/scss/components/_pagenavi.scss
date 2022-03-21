@@ -1,0 +1,163 @@
+@use "../core/variables";
+
+/* ==========================================================================
+   #pagenavi
+   ========================================================================== */
+
+/*doc
+---
+title: pagenavi
+---
+
+```html_example
+<div class="c-pagenavi">
+  <p class="c-pagenavi_title">100件中　11 - 20件表示</p>
+  <div class="c-pagenavi_body">
+    <a class="c-pagenavi_prev" rel="prev" href=""></a>
+    <span class="is-pagenavi_current">1</span>
+    <a class="c-pagenavi_item" href="">2</a>
+    <a class="c-pagenavi_item" href="">3</a>
+    <a class="c-pagenavi_item" href="">4</a>
+    <span class="c-pagenavi_extend">...</span>
+    <a class="c-pagenavi_item" href="">10</a>
+    <a class="c-pagenavi_next" rel="next" href=""></a>
+  </div>
+</div>
+
+```
+*/
+
+.c-pagenavi {
+  margin-bottom: variables.$base-spacing;
+  text-align: center;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-pagenavi {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.c-pagenavi_title {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.c-pagenavi_body {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.is-paginavi-disabled,
+.is-pagenavi_current,
+.c-pagenavi_item,
+.c-pagenavi_extend,
+.c-pagenavi_prev,
+.c-pagenavi_next {
+  line-height: 28px;
+  display: block;
+  min-width: 30px;
+  height: 30px;
+  margin-right: -1px;
+  margin-bottom: 10px;
+  padding-right: 4px;
+  padding-left: 4px;
+  transition: all variables.$base-duration variables.$base-timing;
+  text-align: center;
+  text-decoration: none;
+  color: variables.$secondary-text;
+  border: 1px solid variables.$dividers;
+  background-color: #fff;
+}
+
+.is-pagenavi_current,
+.c-pagenavi_item:hover {
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid variables.$dividers;
+  background-color: variables.$primary-color;
+}
+
+.c-pagenavi_extend {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+/* 左右アイコン */
+.c-pagenavi_prev,
+.c-pagenavi_next {
+  background-color: variables.$primary-light-color;
+}
+
+.c-pagenavi_prev {
+  margin-right: 16px;
+}
+
+.c-pagenavi_next {
+  margin-left: 16px;
+}
+
+.c-pagenavi_prev .material-icons,
+.c-pagenavi_next .material-icons {
+  font-size: 14px;
+  line-height: inherit;
+  height: inherit;
+}
+
+/* 非表示 */
+.is-paginavi-disabled {
+  cursor: not-allowed;
+  opacity: .6;
+  background-color: #EEEEEE;
+}
+
+/*doc
+---
+title: pager
+---
+
+```html_example
+
+  <div class="c-pager">
+    <ul class="c-pager_inner">
+      <li class="c-pager_prev"><a href="" class="is-disabled"><i class="material-icons">chevron_left</i> 前へ</a></li>
+      <li class="c-pager_to-list"><a href="">一覧</a></li>
+      <li class="c-pager_next"><a href="">次へ<i class="material-icons">chevron_right</i></a></li>
+    </ul>
+  </div>
+
+
+```
+*/
+
+
+.c-pager {
+  margin-bottom: variables.$base-spacing;
+  border-top: 1px solid variables.$dividers;
+}
+
+@media only screen and (min-width: variables.$landscape) {
+  .c-pager {
+    margin-bottom: variables.$base-spacing-landscape;
+  }
+}
+
+.c-pager_inner {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c-pager_prev a,
+.c-pager_next a {
+  display: block;
+}
+
+.c-pager_prev i,
+.c-pager_next i {
+  position: relative;
+  top: .25em;
+}
